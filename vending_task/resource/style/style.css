@@ -2,13 +2,13 @@
     --color-main: #6327FE;
     --color-backmain: #EAE8FE;
 }
-
+* {
+    box-sizing: border-box;
+}
 #app {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     background-color: var(--color-backmain);
     font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
 }
 .ir {
     display: block;
@@ -21,11 +21,10 @@
 
 }
 .logo {
+    display: block;
     width: 436px;
     height: 204px;
-    object-fit: cover;
     margin: 0 auto 67px;
-
 }
 
 /* main css */
@@ -34,12 +33,12 @@ main {
     justify-content: center;
     gap: 0 28px;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 main .vending-machine{
     background-color: white;
     width: 360px;
     padding: 31px 27px 24px ;
-    box-sizing: border-box;
 }
 
 /* vending-machine */
@@ -53,7 +52,6 @@ main .vending-machine{
     width: 94px;
     height: 130px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    /* border: 3px solid var(--color-main); */
     border-radius: 10px;
     text-align: center;
     position: relative;
@@ -268,3 +266,25 @@ main .my-info {
     font-size: 12px;
     margin-top: 8px;
 }
+
+@media screen and (max-width: 360px) {
+    #app {
+      background-color: white;
+    }
+    .logo {
+      width: 166px;
+      height: 71.12px;
+      margin: 0 auto;
+    }
+    main .vending-machine {
+      padding: 24px 27px;
+    }
+    .my-info .cont-mymoney {
+      height: 0;
+    }
+    .my-info .cont-getItem {
+      border: none;
+      padding-top: 40px;
+    }
+  }
+  
