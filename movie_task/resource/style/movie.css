@@ -1,122 +1,125 @@
 /* reset  */
-body,ul, p, dl, dt, dd {
-    margin: 0;
-    padding: 0;
-    
+body,
+ul,
+p,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
 }
 li {
-    list-style: none;
+  list-style: none;
 }
 a {
-    text-decoration: none;
-    padding: 0 24px;
+  text-decoration: none;
+  padding: 0 24px;
 }
 a:visited {
-    color : black;
+  color: black;
 }
 a:hover {
-    color : black;
+  color: black;
 }
 a:active {
-    color : black;
+  color: black;
 }
 .fas {
-    color: #EB5757;
+  color: #eb5757;
 }
 .btn {
-    padding: 10px 0;
-    height: 36px;
-    border-top: 1px solid black;
+  padding: 10px 0;
+  height: 36px;
+  border-top: 1px solid black;
 }
 .box {
-    border: 1px solid;
-    border-radius: 10px;
-    width: 1060px;
-    height: 1170px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f2f2f2;
-
+  border: 1px solid;
+  border-radius: 10px;
+  width: 1060px;
+  height: 1170px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
 }
 .title {
-    text-align: center;
+  text-align: center;
 }
 .navbar {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 .menu {
-    display: flex;
-    margin: 0 400px;
-    justify-content: space-evenly;
+  display: flex;
+  margin: 0 400px;
+  justify-content: space-evenly;
 }
 main {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: wrap;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 10px;
-    margin: 28px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 28px;
 }
-.movieBox{
-    border: 1px solid;
-    border-radius: 10px;
-    width: 220px;
-    height: 441px;
-    margin-bottom: 24px;
+.movieBox {
+  border: 1px solid;
+  border-radius: 10px;
+  width: 220px;
+  height: 441px;
+  margin-bottom: 24px;
 }
 .content {
-    padding: 20px;
+  padding: 20px;
 }
 .movieTitle {
-    width: 180px;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-family: Noto Sans KR;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 23px;
+  width: 180px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 23px;
 }
 .moviePoster {
-    width: 180px;
-    height: 250px;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 11px;
+  width: 180px;
+  height: 250px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 11px;
 }
 .movieInfo {
-    font-family: Noto Sans KR;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 19px;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
 }
 dt {
-    float: left;
-    color: #828282;
-    margin-right: 5px;
+  float: left;
+  color: #828282;
+  margin-right: 5px;
 }
 
 footer {
-    background-color: #F2F2F2;
-
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
 }
 .footerTop {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 368px;
-
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 368px;
 }
 .sns {
-    display: flex;
+  display: flex;
 }
-.footerBottom{
-    margin: 0 368px;
+.footerBottom {
+  margin: 0 368px;
 }

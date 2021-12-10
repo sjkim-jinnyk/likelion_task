@@ -2,16 +2,16 @@
 
 :root {
   --main-color: #a9d0f5;
-  --main-font-size: 16px;
-  --medium-font-size: 18px;
-  --large-font-size: 20px;
+  --main-font-size: 14px;
+  --small-font-size: 16px;
+  --large-font-size: 18px;
 }
 
 body {
   width: 800px;
   margin: auto;
   box-sizing: border-box;
-  border: 2px solid var(--main-color);
+  border: 15px solid var(--main-color);
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: var(--main-font-size);
@@ -21,19 +21,33 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--main-color);
+  padding: 20px 15px;
+  border-bottom: 5px solid var(--main-color);
 }
 header .myImg {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 header h2 {
   font-weight: 700;
-  font-size: var(--medium-font-size);
+  font-size: var(--large-font-size);
+}
+header a:visited {
+  color: #37352f;
+}
+header article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+main {
+  padding: 20px 15px;
+}
 main h2 {
   font-weight: 700;
   font-size: var(--large-font-size);
+}
+main section + section {
+  margin-top: 20px;
 }
