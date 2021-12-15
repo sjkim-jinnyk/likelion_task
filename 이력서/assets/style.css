@@ -11,22 +11,18 @@ body {
   width: 800px;
   margin: auto;
   box-sizing: border-box;
-  border: 15px solid var(--main-color);
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: var(--main-font-size);
   line-height: 1.5;
 }
 
+/* header */
 header {
   display: flex;
   justify-content: space-between;
   padding: 20px 15px;
   border-bottom: 5px solid var(--main-color);
-}
-header .myImg {
-  width: 150px;
-  height: 150px;
 }
 header h2 {
   font-weight: 700;
@@ -41,13 +37,29 @@ header article {
   justify-content: center;
 }
 
+/* main */
 main {
   padding: 20px 15px;
+}
+main .myImg {
+  width: 150px;
+  height: 150px;
 }
 main h2 {
   font-weight: 700;
   font-size: var(--large-font-size);
 }
+main h2::before {
+  content: "";
+  width: 8px;
+  float: left;
+  height: 25px;
+  background: var(--main-color);
+  margin-right: 10px;
+}
 main section + section {
   margin-top: 20px;
+}
+main article[class*="_cont"] {
+  display: flex;
 }

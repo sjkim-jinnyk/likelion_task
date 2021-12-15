@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="assets/reset.css" />
     <link rel="stylesheet" href="assets/style.css" />
     <title>김수진</title>
@@ -11,58 +17,50 @@
   <body>
     <header>
       <h1 class="txt-hide">작성자의 개인정보</h1>
-      <article class="contact">
-        <h2 class="contact_head">Contact</h2>
-        <address>
-          <p class="contact-email">
-            <span class="contact_title">Email. </span>
-            sjkim.jinnyk@gmail.com
-          </p>
-          <p class="contact_phone">
-            <span class="contact_title">Phone. </span>
-            010-2398-2742
-          </p>
-        </address>
+      <article class="writer">
+        <p class="writer-name">김수진</p>
+        <p class="writer-job">프론트엔드 엔지니어</p>
       </article>
-      <img src="assets/myImg.jpeg" alt="이력서 사진" class="myImg" />
-      <article>
-        <h2 class="channel_head">Channel</h2>
-        <address>
-          <section class="channel-github">
-            <span class="channel_title">GitHub. </span>
-            <a href="https://github.com/sjkim-jinnyk">
-              https://github.com/sjkim-jinnyk
-            </a>
-          </section>
-          <section class="channel-blog">
-            <span class="channel_title">Blog. </span>
-            <a href="https://velog.io/@sjkim_jinnyk">
-              https://velog.io/@sjkim_jinnyk
-            </a>
-          </section>
+      <article class="contact">
+        <address class="contact-channel">
+          <a href="">
+            <i class="fas fa-blog"></i>
+          </a>
+          <a href="">
+            <i class="fab fa-github"></i>
+          </a>
+        </address>
+        <address class="contact-me">
+          <p class="contact-me_email">sjkim.jinnyk@gmail.com</p>
+          <p class="contact-me_phone">010-2398-2742</p>
         </address>
       </article>
     </header>
     <main>
       <h1 class="txt-hide">작성자의 경력 및 경험</h1>
       <section class="introduce">
-        <h2>Introduce</h2>
-        <p class="introduce_text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quaerat
-          ducimus nostrum perspiciatis, nobis sunt voluptate magni nemo soluta
-          id quod officia reiciendis earum aspernatur sint, minus autem!
-          Maiores, aliquam.
-        </p>
+        <h2>About Me</h2>
+        <article class="about-me_cont">
+          <img class="myImg" src="./assets/myImg.jpeg" alt="작성자 사진" />
+          <p class="about-me_text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis facilis est tenetur nihil sit repudiandae qui maiores
+            ratione iste officiis ipsa ab similique consequatur, architecto
+            omnis sed veniam, illo perspiciatis?
+          </p>
+        </article>
       </section>
       <section class="project">
-        <h2>project</h2>
-        <p class="project_title">오징어게임</p>
-        <p class="project_cont">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
-          tempore? Debitis, itaque. Minima nam reprehenderit consequatur ut
-          necessitatibus fugit eaque qui repellat obcaecati nulla tenetur, iusto
-          ullam eveniet autem perspiciatis?
-        </p>
+        <h2>Project</h2>
+        <article class="project_cont">
+          <p class="project_title">오징어게임</p>
+          <p class="project_text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
+            tempore? Debitis, itaque. Minima nam reprehenderit consequatur ut
+            necessitatibus fugit eaque qui repellat obcaecati nulla tenetur,
+            iusto ullam eveniet autem perspiciatis?
+          </p>
+        </article>
       </section>
       <section class="skill">
         <h2>skill</h2>
