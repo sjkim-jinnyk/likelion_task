@@ -1,65 +1,100 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
 
 :root {
   --main-color: #a9d0f5;
   --main-font-size: 14px;
-  --small-font-size: 16px;
-  --large-font-size: 18px;
+  --medium-font-size: 16px;
+  --large-font-size: 20px;
+}
+html {
+  font-size: 10px;
 }
 
 body {
-  width: 800px;
+  width: 80rem;
   margin: auto;
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
-  font-size: var(--main-font-size);
+  font-size: 1.6rem;
   line-height: 1.5;
+  color: #333333;
+  letter-spacing: 0.05rem;
 }
 
 /* header */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 15px;
-  border-bottom: 5px solid var(--main-color);
+  margin-top: 3rem;
+  padding: 2.5rem 1.5rem;
 }
 header h2 {
   font-weight: 700;
   font-size: var(--large-font-size);
 }
+header a,
+header a:active,
 header a:visited {
-  color: #37352f;
+  color: #333333;
 }
 header article {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+header .writer .writer-name {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+header .writer .writer-job {
+  font-size: 2rem;
+}
+header .contact {
+  text-align: right;
+}
+header .contact .contact-channel {
+  font-size: 4rem;
+}
+header .contact-me .contact-me_phone span,
+header .contact-me .contact-me_email a {
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
 
 /* main */
 main {
-  padding: 20px 15px;
-}
-main .myImg {
-  width: 150px;
-  height: 150px;
+  padding: 2.5rem 1.5rem;
 }
 main h2 {
-  font-weight: 700;
-  font-size: var(--large-font-size);
-}
-main h2::before {
-  content: "";
-  width: 8px;
-  float: left;
-  height: 25px;
-  background: var(--main-color);
-  margin-right: 10px;
+  font-weight: 300;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--main-color);
 }
 main section + section {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
-main article[class*="_cont"] {
+main section article {
+  padding: 2.5rem 1.5rem;
+}
+main section article[class*="_cont"] {
   display: flex;
+}
+main section article p[class*="_title"] {
+  width: 25%;
+  padding: 0 1.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+main section article p[class*="_text"] {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+main .introduce .about-me_cont img {
+  width: 25%;
+  padding: 0 1.5rem;
 }
