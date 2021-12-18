@@ -21,6 +21,11 @@ body {
   color: #333333;
   letter-spacing: 0.05rem;
 }
+a,
+a:active,
+a:visited {
+  color: #333333;
+}
 
 /* header */
 header {
@@ -32,11 +37,6 @@ header {
 header h2 {
   font-weight: 700;
   font-size: var(--large-font-size);
-}
-header a,
-header a:active,
-header a:visited {
-  color: #333333;
 }
 header article {
   display: flex;
@@ -82,7 +82,8 @@ main section article {
 main section article[class*="_cont"] {
   display: flex;
 }
-main section article p[class*="_title"] {
+main section article p[class*="_title"],
+main section article section[class*="_title"] {
   width: 25%;
   padding: 0 1.5rem;
   font-weight: 500;
@@ -95,6 +96,21 @@ main section article p[class*="_text"] {
   padding: 0 1.5rem;
 }
 main .introduce .about-me_cont img {
-  width: 25%;
+  width: 23%;
   padding: 0 1.5rem;
+}
+main .introduce .about-me_cont .about-me_text {
+  padding: 0 1.5rem;
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .project .project_cont .project_period {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+main .introduce .about-me_cont .about-me_text a,
+main .project .project_cont .project_text a {
+  color: royalblue;
 }
