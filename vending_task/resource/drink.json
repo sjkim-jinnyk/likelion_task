@@ -1,0 +1,26 @@
+[
+  {
+    "drink": "Original_Cola",
+    "price": 1000
+  },
+  {
+    "drink": "Violet_Cola",
+    "price": 1100
+  },
+  {
+    "drink": "Yellow_Cola",
+    "price": 1200
+  },
+  {
+    "drink": "Cool_Cola",
+    "price": 1300
+  },
+  {
+    "drink": "Green_Cola",
+    "price": 1400
+  },
+  {
+    "drink": "Orange_Cola",
+    "price": 1500
+  }
+]
