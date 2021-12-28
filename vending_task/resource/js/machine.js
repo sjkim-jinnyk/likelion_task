@@ -1,4 +1,8 @@
 const drinkList = document.querySelector(".list-item");
+let totalSum = 0;
+let totalPrice = document.querySelector(".txt-price");
+let myMoney = document.querySelector(".txt-mymoney");
+const moneyInput = document.querySelector(".btn-pay");
 
 getData();
 
@@ -36,6 +40,27 @@ function renderContent(data) {
     </button>
       `;
     element.innerHTML = listString;
-    // drinkBtnClick(element, data, index);
+    drinkBtnClick(element, data, index);
   });
 }
+
+function drinkBtnClick(element, data, index) {
+  element.addEventListener("click", (e) => {
+    let clickList = e.currentTarget;
+    clickList.classList.toggle("list-click");
+
+    if (clickList.className === "list-click") totalSum += data[index].price;
+    else totalSum -= data[index].price;
+
+    totalPrice.innerText = `${totalSum.toLocaleString()}원`;
+  });
+}
+
+function moneyInputClick() {
+  moneyInput.addEventListener("click", () => {
+    let money = document.querySelector(".inp-put").value;
+    myMoney.innerText = `${money.toLocaleString()}원`;
+  });
+}
+
+moneyInputClick();
