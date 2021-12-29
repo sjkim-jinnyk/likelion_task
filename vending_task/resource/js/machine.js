@@ -1,10 +1,20 @@
 const drinkList = document.querySelector(".list-item");
-let totalSum = 0;
+const drinkGetList = document.querySelector(".list-getItem");
 let totalPrice = document.querySelector(".txt-price");
 let myMoney = document.querySelector(".txt-mymoney");
-const moneyInput = document.querySelector(".btn-pay");
+let extraMoney = document.querySelector(".txt-totalmoney");
+const moneyInputBtn = document.querySelector(".btn-pay");
+const getBtn = document.querySelector(".btn-getItem");
 
-getData();
+let totalSum = 0;
+let moneyInput;
+let select = new Map();
+
+init();
+
+function init() {
+  getData();
+}
 
 function getData() {
   fetch("./resource/drink.json")
@@ -13,7 +23,7 @@ function getData() {
     })
     .then((jsonData) => {
       newList(jsonData);
-      renderContent(jsonData);
+      renderNewList(jsonData);
     });
 }
 
@@ -24,7 +34,7 @@ function newList(data) {
   }
 }
 
-function renderContent(data) {
+function renderNewList(data) {
   const colaList = document.querySelectorAll(".list-item li");
 
   colaList.forEach((element, index) => {
@@ -47,20 +57,68 @@ function renderContent(data) {
 function drinkBtnClick(element, data, index) {
   element.addEventListener("click", (e) => {
     let clickList = e.currentTarget;
-    clickList.classList.toggle("list-click");
 
-    if (clickList.className === "list-click") totalSum += data[index].price;
-    else totalSum -= data[index].price;
-
+    clickList.classList.add("list-click");
+    totalSum += data[index].price;
     totalPrice.innerText = `${totalSum.toLocaleString()}원`;
+
+    let drinkName = data[index].drink;
+
+    if (select.has(drinkName)) select.set(drinkName, select.get(drinkName) + 1);
+    else select.set(drinkName, 1);
+
+    selectList(select);
   });
 }
 
 function moneyInputClick() {
-  moneyInput.addEventListener("click", () => {
-    let money = document.querySelector(".inp-put").value;
-    myMoney.innerText = `${money.toLocaleString()}원`;
-  });
+  moneyInput = parseInt(document.querySelector(".inp-put").value);
+
+  if (!moneyInput) alert("입금액을 입력해주세요.");
+  else if (!totalSum) alert("음료를 선택해주세요.");
+
+  if (totalSum > moneyInput)
+    alert("금액이 부족합니다. 음료 값을 확인하고 입금해주세요.");
+  else myMoney.innerText = `${moneyInput.toLocaleString()}원`;
 }
 
-moneyInputClick();
+function selectList(data) {
+  if (drinkGetList.children.length < data.size) {
+    const list = document.createElement("li");
+    for (let x of data) {
+      const str = `                
+      <img
+      src="./resource/img/${x[0]}.png"
+      alt=""
+      class="img-item"
+      />
+      <strong class="txt-item">${x[0]}</strong>
+      <span class="num-counter">${x[1]}</span>
+      `;
+      list.innerHTML = str;
+    }
+    drinkGetList.append(list);
+  } else if (drinkGetList.children.length === data.size) {
+    const num = document.querySelectorAll(".vending-machine .num-counter");
+    let drinkNum = [];
+    for (let x of data) {
+      drinkNum.push(x[1]);
+    }
+    num.forEach((e, i) => {
+      e.innerText = drinkNum[i];
+    });
+  }
+}
+
+function getDrink() {
+  let extra = moneyInput - totalSum;
+  extraMoney.innerText = `${extra.toLocaleString()}원`;
+}
+
+getBtn.addEventListener("click", () => {
+  getDrink();
+});
+
+moneyInputBtn.addEventListener("click", () => {
+  moneyInputClick();
+});
