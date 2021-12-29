@@ -1,10 +1,15 @@
-const drinkList = document.querySelector(".list-item");
-const drinkGetList = document.querySelector(".list-getItem");
+const drinkList = document.querySelector(".vending-machine .list-item");
+const drinkSelectList = document.querySelector(
+  ".vending-machine .list-getItem"
+);
+const drinkBuyListParent = document.querySelector(".my-info .cont-getItem");
+const drinkBuyList = document.querySelector(".my-info .list-getItem");
 let totalPrice = document.querySelector(".txt-price");
 let myMoney = document.querySelector(".txt-mymoney");
+const extraMoneyParent = document.querySelector(".my-info .info-totalmoney");
 let extraMoney = document.querySelector(".txt-totalmoney");
 const moneyInputBtn = document.querySelector(".btn-pay");
-const getBtn = document.querySelector(".btn-getItem");
+const buyBtn = document.querySelector(".btn-getItem");
 
 let totalSum = 0;
 let moneyInput;
@@ -67,7 +72,7 @@ function drinkBtnClick(element, data, index) {
     if (select.has(drinkName)) select.set(drinkName, select.get(drinkName) + 1);
     else select.set(drinkName, 1);
 
-    selectList(select);
+    drinkSelect(select);
   });
 }
 
@@ -82,8 +87,8 @@ function moneyInputClick() {
   else myMoney.innerText = `${moneyInput.toLocaleString()}원`;
 }
 
-function selectList(data) {
-  if (drinkGetList.children.length < data.size) {
+function drinkSelect(data) {
+  if (drinkSelectList.children.length < data.size) {
     const list = document.createElement("li");
     for (let x of data) {
       const str = `                
@@ -97,8 +102,8 @@ function selectList(data) {
       `;
       list.innerHTML = str;
     }
-    drinkGetList.append(list);
-  } else if (drinkGetList.children.length === data.size) {
+    drinkSelectList.append(list);
+  } else if (drinkSelectList.children.length === data.size) {
     const num = document.querySelectorAll(".vending-machine .num-counter");
     let drinkNum = [];
     for (let x of data) {
@@ -110,13 +115,20 @@ function selectList(data) {
   }
 }
 
-function getDrink() {
+function buyDrink() {
   let extra = moneyInput - totalSum;
   extraMoney.innerText = `${extra.toLocaleString()}원`;
 }
 
-getBtn.addEventListener("click", () => {
-  getDrink();
+buyBtn.addEventListener("click", () => {
+  if (!moneyInput) alert("입금액을 입력해주세요.");
+  else {
+    buyDrink();
+    const copySelectDrink = drinkSelectList.cloneNode(true);
+
+    drinkBuyListParent.removeChild(drinkBuyList);
+    drinkBuyListParent.insertBefore(copySelectDrink, extraMoneyParent);
+  }
 });
 
 moneyInputBtn.addEventListener("click", () => {
