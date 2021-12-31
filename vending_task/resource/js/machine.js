@@ -6,7 +6,6 @@ const drinkBuyListParent = document.querySelector(".my-info .cont-getItem");
 const drinkBuyList = document.querySelector(".my-info .list-getItem");
 let totalPrice = document.querySelector(".txt-price");
 let myMoney = document.querySelector(".txt-mymoney");
-const extraMoneyParent = document.querySelector(".my-info .info-totalmoney");
 let extraMoney = document.querySelector(".txt-totalmoney");
 const moneyInputBtn = document.querySelector(".btn-pay");
 const buyBtn = document.querySelector(".btn-getItem");
@@ -14,7 +13,7 @@ const buyBtn = document.querySelector(".btn-getItem");
 let totalSum = 0;
 let moneyInput;
 let select = new Map();
-
+let extra = 0;
 init();
 
 function init() {
@@ -84,7 +83,7 @@ function moneyInputClick() {
 
   if (totalSum > moneyInput)
     alert("금액이 부족합니다. 음료 값을 확인하고 입금해주세요.");
-  else myMoney.innerText = `${moneyInput.toLocaleString()}원`;
+  else myMoney.innerText = `${(extra + moneyInput).toLocaleString()}원`;
 }
 
 function drinkSelect(data) {
@@ -116,18 +115,39 @@ function drinkSelect(data) {
 }
 
 function buyDrink() {
-  let extra = moneyInput - totalSum;
+  extra = moneyInput - totalSum;
+  myMoney.innerText = `${extra.toLocaleString()}원`;
   extraMoney.innerText = `${extra.toLocaleString()}원`;
+}
+
+function dataReset() {
+  totalPrice.innerText = "";
+  document.querySelector(".inp-put").value = null;
+  totalSum = 0;
+  select.clear();
+  const listClick = document.querySelectorAll(".list-click");
+  listClick.forEach((e) => {
+    e.classList.remove("list-click");
+  });
+  removeAllChildeNodes(drinkSelectList);
+}
+
+function removeAllChildeNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
 
 buyBtn.addEventListener("click", () => {
   if (!moneyInput) alert("입금액을 입력해주세요.");
   else {
     buyDrink();
-    const copySelectDrink = drinkSelectList.cloneNode(true);
+    const items = drinkSelectList.querySelectorAll("li");
+    items.forEach((item) => {
+      drinkBuyList.append(item);
+    });
 
-    drinkBuyListParent.removeChild(drinkBuyList);
-    drinkBuyListParent.insertBefore(copySelectDrink, extraMoneyParent);
+    dataReset();
   }
 });
 
