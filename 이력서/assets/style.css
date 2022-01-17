@@ -97,6 +97,7 @@ main section article p[class*="_text"] {
 }
 main .introduce .about-me_cont img {
   width: 23%;
+  height: 23%;
   padding: 0 1.5rem;
 }
 main .introduce .about-me_cont .about-me_text {
@@ -113,4 +114,14 @@ main .project .project_cont .project_period {
 main .introduce .about-me_cont .about-me_text a,
 main .project .project_cont .project_text a {
   color: royalblue;
+}
+main .skill .skill_cont .skill_text {
+  width: 25%;
+}
+main .skill .skill_cont .skill_text strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+main .introduce .about-me_cont {
+  align-items: center;
 }
